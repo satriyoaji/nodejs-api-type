@@ -27,30 +27,35 @@
 
 
 ### Setup
-
 ```
-npm install
-```
-
-## Test
-
-```
-npm run test
+yarn install
 ```
 
-## Development
+## Run Development
+```
+yarn start
+```
+It should be appeared like this in command line
+```
+$ yarn start
+yarn run v1.22.19
+$ ts-node-dev --respawn --transpile-only --exit-child src/app.ts
+[INFO] 23:10:01 ts-node-dev ver. 1.1.8 (using ts-node ver. 9.1.1, typescript ver. 4.5.2)
+Redis client connect successfully
+Server started on port: 8000
+```
 
+## Create Migration
 ```
-npm run start
+yarn migrate:create [path_to_file_name]
 ```
 
-## Generate Migration
+## Generate Migration From Entities
+```
+yarn migrate:gen && yarn migrate:up
+```
 
-```
-npm run migrate
-```
 ## Push Schema Migration
-
 ```
-npm run db:push
+yarn migrate:up
 ```
