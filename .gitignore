@@ -1,6 +1,8 @@
 .idea/
 .vscode/
 node_modules/
+config/private.key
+config/public.key
 build/
 tmp/
 temp/

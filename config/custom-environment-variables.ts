@@ -9,6 +9,7 @@ export default {
     database: 'POSTGRES_DB',
   },
 
+  accessTokenExpiresIn: 'JWT_ACCESS_TOKEN_EXPIRED_HOURS',
   accessTokenPrivateKey: 'JWT_ACCESS_TOKEN_PRIVATE_KEY',
   accessTokenPublicKey: 'JWT_ACCESS_TOKEN_PUBLIC_KEY',
   refreshTokenPrivateKey: 'JWT_REFRESH_TOKEN_PRIVATE_KEY',

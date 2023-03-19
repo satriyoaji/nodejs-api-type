@@ -1,5 +1,8 @@
 import jwt, { SignOptions } from 'jsonwebtoken';
 import config from 'config';
+import * as fs from "fs";
+const privateKEY  = fs.readFileSync('./config/private.key', 'utf8');
+const publicKEY  = fs.readFileSync('./config/public.key', 'utf8');
 
 export const signJwt = (
   payload: Object,
@@ -10,9 +13,9 @@ export const signJwt = (
     config.get<string>(keyName),
     'base64'
   ).toString('ascii');
-  return jwt.sign(payload, privateKey, {
+  return jwt.sign(payload, privateKEY, {
     ...(options && options),
-    algorithm: 'RS256',
+    algorithm: 'RS512',
   });
 };
 
@@ -25,7 +28,7 @@ export const verifyJwt = <T>(
       config.get<string>(keyName),
       'base64'
     ).toString('ascii');
-    const decoded = jwt.verify(token, publicKey) as T;
+    const decoded = jwt.verify(token, publicKEY) as T;
 
     return decoded;
   } catch (error) {
