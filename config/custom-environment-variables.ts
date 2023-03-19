@@ -9,6 +9,14 @@ export default {
     database: 'POSTGRES_DB',
   },
 
+  redisConfig: {
+    host: 'REDIS_HOST',
+    port: 'REDIS_PORT',
+    username: 'REDIS_USERNAME',
+    password: 'REDIS_PASSWORD',
+    database: 'REDIS_DB',
+  },
+
   accessTokenExpiresIn: 'JWT_ACCESS_TOKEN_EXPIRED_HOURS',
   accessTokenPrivateKey: 'JWT_ACCESS_TOKEN_PRIVATE_KEY',
   accessTokenPublicKey: 'JWT_ACCESS_TOKEN_PUBLIC_KEY',

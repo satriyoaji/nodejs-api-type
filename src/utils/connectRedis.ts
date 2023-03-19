@@ -1,11 +1,20 @@
 import { createClient } from 'redis';
+import config from "config";
+const redisConfig = config.get<{
+  host: string;
+  port: number;
+  username: string;
+  password: string;
+  database: string;
+}>('redisConfig');
 
-const redisUrl = `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`;
+const redisUrl = `redis://${redisConfig.host}:${redisConfig.port}`;
 
 const redisClient = createClient({
   url: redisUrl,
-  password: process.env.REDIS_PASSWORD,
-  name: process.env.REDIS_DB,
+  password: redisConfig.password,
+  username: redisConfig.username,
+  name: redisConfig.database,
 });
 
 const connectRedis = async () => {
