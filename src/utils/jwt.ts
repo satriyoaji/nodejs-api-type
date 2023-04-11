@@ -34,7 +34,7 @@ export const verifyJwt = <T>(
     // ).toString('ascii');
     const publicKey = config.get<string>(keyName)
 
-    let publicKeyLoaded = (publicKey === "./config/private.key" || publicKey === "") ?
+    let publicKeyLoaded = (publicKey === "./config/publicKey.key" || publicKey === "") ?
         fs.readFileSync(publicKey, 'utf8') :
         publicKey;
 
