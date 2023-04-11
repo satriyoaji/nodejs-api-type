@@ -1,4 +1,4 @@
-# ThatGirl-ERP-BE
+# NodeJS Boilerplate
 ## API with Node.js + PostgreSQL + TypeORM: JWT Authentication
 
 ![API with Node.js + PostgreSQL + TypeORM: JWT Authentication](https://codevoweb.com/wp-content/uploads/2022/05/API-with-Node.js-PostgreSQL-TypeORM-JWT-Authentication.webp)
